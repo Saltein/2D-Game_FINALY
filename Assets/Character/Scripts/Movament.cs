@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Movament : MonoBehaviour
 {
-
-    [SerializeField] private float speed = 0.03f;
-    private float sprintSpeed;
-    private float oldSpeed;
+    [SerializeField] private float speed = 0.03f;    
     [SerializeField] private float camSpeed = 0.03f;
+
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject target;
     [SerializeField] private Camera cam;
+
+    private float sprintSpeed;
+    private float oldSpeed;
 
     private void Start()
     {
@@ -20,22 +21,29 @@ public class Movament : MonoBehaviour
         Debug.Log(oldSpeed.ToString() + "\n" + sprintSpeed.ToString());
     }
 
+    private void Update()
+    {
+        Vector3 selfPos = transform.position;
+
+        // Бег
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = sprintSpeed;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = oldSpeed;
+        }
+
+        // Рывок надо как-то сделать
+    }
+
     void FixedUpdate()
     {
         // Ходьба
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
         transform.position += new Vector3(moveX, moveY) * speed;
-
-        // Бег
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = sprintSpeed;
-        }
-        else
-        {
-            speed = oldSpeed;
-        }
 
         // Поворот
         target.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -18,6 +18,8 @@ public class FPScounter : MonoBehaviour
 
     void Update()
     {
+
+        FPS.transform.position = new Vector3(Screen.width - 90, Screen.height - 20, 0);
         frames++;
         seconds += Time.deltaTime;
         fps = frames / seconds;
