@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bullet_ak-47
   - fieldOfView
+  - playerBody
   layers:
   - Default
   - TransparentFX
