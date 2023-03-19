@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movament : MonoBehaviour
 {
-    [SerializeField] private float speed = 0.03f;    
+    [SerializeField] private float speed = 5f;    
     [SerializeField] private float camSpeed = 0.03f;
 
     [SerializeField] private GameObject head; // персонаж, голова
@@ -15,8 +15,11 @@ public class Movament : MonoBehaviour
     private float sprintSpeed;
     private float oldSpeed;
 
+    private Rigidbody2D rb;
+
     private void Start()
     {
+         rb = GetComponent<Rigidbody2D>();
         oldSpeed = speed;
         sprintSpeed += oldSpeed + oldSpeed / 3 * 2;
         Debug.Log(oldSpeed.ToString() + "\n" + sprintSpeed.ToString());
@@ -52,7 +55,7 @@ public class Movament : MonoBehaviour
         // Ходьба
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        transform.position += new Vector3(moveX, moveY) * speed;
+        rb.velocity = new Vector3(moveX, moveY) * speed;
 
         // Поворот
         target.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);

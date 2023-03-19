@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Bullet : MonoBehaviour
+public class BulletBehavior : MonoBehaviour
 {
     public float bulletSpeed = 100f;
+
     private float fieldOfView = 50f;
+    private float timer = 0;
+
+    private bool IsHit = false;
 
     Rigidbody2D rb;
     float[] startPos = new float[2];
+
+    Vector2 normalCollis;
 
     private void Start()
     {
@@ -18,7 +25,21 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = transform.up * bulletSpeed;
+        if (!IsHit)
+        {
+            rb.velocity = transform.up * bulletSpeed;
+        }
+        else
+        {
+            rb.velocity = transform.up * Mathf.Lerp(bulletSpeed, 0f, 5f);
+        }
+
+        timer += Time.deltaTime;
+
+        if (timer >= 2f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -31,5 +52,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        IsHit = true;
     }
 }
