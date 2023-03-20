@@ -10,7 +10,7 @@ public class Movament : MonoBehaviour
     [SerializeField] private GameObject head; // персонаж, голова
     [SerializeField] private GameObject target; // там, где указатель мыши
     [SerializeField] private GameObject middle; // там, где будет камера стоять
-    [SerializeField] private Camera cam; // камера собственно
+    public Camera cam; // камера собственно
 
     private float sprintSpeed;
     private float oldSpeed;
