@@ -7,6 +7,11 @@ TagManager:
   - bullet_ak-47
   - fieldOfView
   - playerBody
+  - Scrap
+  - Rag
+  - Chemicals
+  - Wood
+  - Bricks
   layers:
   - Default
   - TransparentFX

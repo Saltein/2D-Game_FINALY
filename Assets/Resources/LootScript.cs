@@ -5,21 +5,23 @@ using UnityEngine.UIElements;
 
 public class LootScript : MonoBehaviour
 {
-    //private bool IsEnoughClose = false;
+    private bool IsEnoughClose = false;
+    Vector3 playerPos;
 
-    //void Update()
-    //{
-    //    if (IsEnoughClose)
-    //    {
-    //        transform.position = Vector3.Lerp(transform.position, , 0.3f);
-    //    }
-    //}
+    void Update()
+    {
+        if (IsEnoughClose)
+        {
+            transform.position = Vector3.Lerp(transform.position, playerPos, 0.1f);
+        }
+    }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "playerBody")
-    //    {
-    //        IsEnoughClose = true;
-    //    }        
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "playerBody")
+        {
+            playerPos = collision.transform.position;
+            IsEnoughClose = true;
+        }
+    }
 }
