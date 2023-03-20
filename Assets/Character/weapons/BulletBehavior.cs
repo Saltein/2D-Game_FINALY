@@ -57,5 +57,6 @@ public class BulletBehavior : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IsHit = true;
+        Destroy(gameObject);
     }
 }
