@@ -23,13 +23,18 @@ public class Movament : MonoBehaviour
     private float sprintSpeed;
     private float oldSpeed;
 
+    private float s = 1;
+    private float s1 = 1;
+
+    private float newSpeed;
+
     private Rigidbody2D rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         oldSpeed = speed;
-        sprintSpeed += oldSpeed * 2;
+        sprintSpeed = oldSpeed * 2;
         Debug.Log(oldSpeed.ToString() + "\n" + sprintSpeed.ToString());
     }
 
@@ -48,25 +53,27 @@ public class Movament : MonoBehaviour
         // Бег
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = sprintSpeed;
+            Debug.Log("Shift");
+            s *= 1.7f;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed = oldSpeed;
+            s = s1;
         }
-
         // Рывок
         if (Input.GetKeyDown(KeyCode.Space))
         {
             timer = 0f;
             if (timer <= dashTime && !IsDash)
             {
-                speed *= 5;
+                newSpeed = oldSpeed * 5;
                 IsDash = true;
             }
         }
-        if (timer >= dashTime) { speed = oldSpeed; IsDash = false; }
+        if (timer >= dashTime) { newSpeed = oldSpeed; IsDash = false; }
         timer += Time.deltaTime;
+
+        speed = newSpeed;
     }
 
     void FixedUpdate()
@@ -74,7 +81,7 @@ public class Movament : MonoBehaviour
         // Ходьба
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(moveX, moveY) * speed;
+        rb.velocity = new Vector3(moveX, moveY) * speed * s;
 
         // Поворот
         target.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
