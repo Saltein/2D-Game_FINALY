@@ -12,6 +12,14 @@ public class Movament : MonoBehaviour
     [SerializeField] private GameObject middle; // там, где будет камера стоять
     public Camera cam; // камера собственно
 
+    private float moveX;
+    private float moveY;
+
+    private float timer;
+
+    private bool IsDash = false;
+
+    private float dashTime = 0.1f;
     private float sprintSpeed;
     private float oldSpeed;
 
@@ -19,9 +27,9 @@ public class Movament : MonoBehaviour
 
     private void Start()
     {
-         rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         oldSpeed = speed;
-        sprintSpeed += oldSpeed + oldSpeed / 3 * 2;
+        sprintSpeed += oldSpeed * 2;
         Debug.Log(oldSpeed.ToString() + "\n" + sprintSpeed.ToString());
     }
 
@@ -29,7 +37,7 @@ public class Movament : MonoBehaviour
     {
         // Камера
         float midX = (head.transform.position.x + target.transform.position.x) / 2;
-        float midY = (head.transform.position.y + target.transform.position.y) / 2;
+        float midY = (head.transform.position.y + target.transform.position.y) / 2;       
 
         middle.transform.position = new Vector3(midX, midY, 0);
 
@@ -47,14 +55,25 @@ public class Movament : MonoBehaviour
             speed = oldSpeed;
         }
 
-        // Рывок надо как-то сделать
+        // Рывок
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            timer = 0f;
+            if (timer <= dashTime && !IsDash)
+            {
+                speed *= 5;
+                IsDash = true;
+            }
+        }
+        if (timer >= dashTime) { speed = oldSpeed; IsDash = false; }
+        timer += Time.deltaTime;
     }
 
     void FixedUpdate()
     {
         // Ходьба
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector3(moveX, moveY) * speed;
 
         // Поворот
