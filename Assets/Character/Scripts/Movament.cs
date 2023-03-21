@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movament : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;    
+    [SerializeField] private float speed = 5f;
     [SerializeField] private float camSpeed = 0.03f;
 
     [SerializeField] private GameObject head; // персонаж, голова
@@ -17,16 +17,20 @@ public class Movament : MonoBehaviour
 
     private float timer;
 
-    private bool IsDash = false;
-
     private float dashTime = 0.1f;
     private float sprintSpeed;
     private float oldSpeed;
+    private float newSpeed;
+
+    private float staminaDecrease = 40f;
+    private float staminaIncrease = 15f;
+    private float staminaDash = 30f;
 
     private float s = 1;
     private float s1 = 1;
 
-    private float newSpeed;
+    private bool IsDash = false;
+    private bool IsRunning = false;
 
     private Rigidbody2D rb;
 
@@ -42,7 +46,7 @@ public class Movament : MonoBehaviour
     {
         // Камера
         float midX = (head.transform.position.x + target.transform.position.x) / 2;
-        float midY = (head.transform.position.y + target.transform.position.y) / 2;       
+        float midY = (head.transform.position.y + target.transform.position.y) / 2;
 
         middle.transform.position = new Vector3(midX, midY, 0);
 
@@ -50,24 +54,49 @@ public class Movament : MonoBehaviour
         Vector3 playPos = new Vector3(middle.transform.position.x, middle.transform.position.y, -10f);
         cam.transform.position = Vector3.Lerp(camPos, playPos, camSpeed);
 
-        // Бег
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        // Бег и стамина
+        if (PlayerManager.playerStamina > 0)
         {
-            Debug.Log("Shift");
-            s *= 1.7f;
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                IsRunning = true;
+                s *= 1.7f;
+            }
+            if (IsRunning)
+            {
+                PlayerManager.playerStamina -= Time.deltaTime * staminaDecrease;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        else
         {
             s = s1;
         }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            IsRunning = false;
+            s = s1;
+        }
+
+        if (!Input.GetKey(KeyCode.LeftShift) && PlayerManager.playerStamina < 100f)
+        {
+            PlayerManager.playerStamina += Time.deltaTime * staminaIncrease;
+        }
+
+        if (PlayerManager.playerStamina > 100) { PlayerManager.playerStamina = 100; }
+        if (PlayerManager.playerStamina < 0) { PlayerManager.playerStamina = 0; }
+
         // Рывок
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            timer = 0f;
-            if (timer <= dashTime && !IsDash)
+            if (PlayerManager.playerStamina > staminaDash)
             {
-                newSpeed = oldSpeed * 5;
-                IsDash = true;
+                PlayerManager.playerStamina -= staminaDash;
+                timer = 0f;
+                if (timer <= dashTime && !IsDash)
+                {
+                    newSpeed = oldSpeed * 5;
+                    IsDash = true;
+                }
             }
         }
         if (timer >= dashTime) { newSpeed = oldSpeed; IsDash = false; }
