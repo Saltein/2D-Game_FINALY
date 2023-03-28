@@ -62,7 +62,7 @@ public class Movament : MonoBehaviour
                 IsRunning = true;
                 s *= 1.7f;
             }
-            if (IsRunning)
+            if (IsRunning && (moveX != 0 || moveY != 0))
             {
                 PlayerManager.playerStamina -= Time.deltaTime * staminaDecrease;
             }
@@ -88,7 +88,7 @@ public class Movament : MonoBehaviour
         // Рывок
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (PlayerManager.playerStamina > staminaDash)
+            if (PlayerManager.playerStamina > staminaDash && (moveX != 0 || moveY != 0))
             {
                 PlayerManager.playerStamina -= staminaDash;
                 timer = 0f;

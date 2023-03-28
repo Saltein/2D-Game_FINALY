@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 100
+  react: {fileID: 1278590035255471333, guid: f8468897cc2c8944884f02c89e41d0a0, type: 3}

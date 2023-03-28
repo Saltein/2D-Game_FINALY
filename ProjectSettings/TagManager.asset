@@ -12,6 +12,7 @@ TagManager:
   - Chemicals
   - Wood
   - Bricks
+  - Zombie
   layers:
   - Default
   - TransparentFX
