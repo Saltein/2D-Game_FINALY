@@ -44,7 +44,7 @@ public class ZombieMovement : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.tag == "playerBody")
+            if (hit.collider.tag == "playerBody" || hit.collider.tag == "Zombie")
             {
                 movement = direction * speed;
                 head.transform.rotation = Quaternion.Euler(0, 0, -ang + 90);
