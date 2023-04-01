@@ -13,6 +13,11 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Wo;
     [SerializeField] private TextMeshProUGUI Br;
 
+    [SerializeField] private TextMeshProUGUI bandage;
+    [SerializeField] private TextMeshProUGUI bandageCountTxt;
+
+    public static int bandageCount = 0;
+
     public static int scrapAm = 0, chemicAm = 0, ragAm = 0, woodAm = 0, brickAm = 0;
 
     [SerializeField] private GameObject invPanel;
@@ -20,6 +25,7 @@ public class InventoryScript : MonoBehaviour
     private void Start()
     {
         invPanel.SetActive(false);
+        bandage.color = Color.gray;
     }
     private void Update()
     {
@@ -44,5 +50,15 @@ public class InventoryScript : MonoBehaviour
             IsOpen = !IsOpen;
             Debug.Log("IsOpen " + IsOpen.ToString());
         }
+
+
+        // -------------------- крафт --------------------
+        bandageCountTxt.text = "x" + bandageCount.ToString();
+        // бинты
+        if (ragAm >= 2)
+        {
+            bandage.color = Color.white;
+        }
+        else { bandage.color = Color.gray; }
     }
 }

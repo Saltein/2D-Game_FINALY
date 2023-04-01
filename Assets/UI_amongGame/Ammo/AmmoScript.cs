@@ -1,0 +1,79 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
+public class AmmoScript : MonoBehaviour
+{
+    [SerializeField] private TextMeshProUGUI ammoTxt;
+    [SerializeField] private TextMeshProUGUI ammoOutTxt;
+    [SerializeField] private Image ammoBar;
+    [SerializeField] private Image reloadBar;
+    public static bool IsReloading = false;
+
+    float timer = 0;
+    float reloadTime = 1.3f;
+
+    Vector3 barPosBefore = new Vector3(676, -210, 0);
+    Vector3 barPosAfter = new Vector3(676, -206.5f, 0);
+
+    private void Start()
+    {
+        Weapon.ammoOutCount = 30;
+        Weapon.ammoCount = 30;
+    }
+    void Update()
+    {
+        ammoTxt.text = Weapon.ammoCount.ToString();
+        ammoOutTxt.text = Weapon.ammoOutCount.ToString();
+        timer += Time.deltaTime;
+
+        float maxAmm = Weapon.maxAmmo;
+        float ammoCo = Weapon.ammoCount;
+
+        ammoBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ammoCo / maxAmm * 100);
+
+        // перезарядка
+        if ((Input.GetKeyDown(KeyCode.R) || Weapon.ammoCount == 0) && !IsReloading && Weapon.ammoCount < Weapon.maxAmmo && Weapon.ammoOutCount > 0)
+        {           
+            IsReloading = true;
+            timer = 0;
+            reloadBar.color = new Color(0, 1, 1, 1);
+        }
+
+        if (IsReloading)
+        {
+            reloadBar.rectTransform.anchoredPosition = barPosAfter;
+            reloadBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, timer / reloadTime * 100);
+        }
+        else 
+        { 
+            reloadBar.rectTransform.anchoredPosition = Vector3.Lerp(reloadBar.rectTransform.anchoredPosition, barPosBefore, 0.05f);
+            reloadBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ammoCo / maxAmm * 100);
+        }
+        if (reloadBar.rectTransform.anchoredPosition.y <= -209.5f && !IsReloading) { reloadBar.color = new Color(0, 1, 1, 0); }
+
+        if (timer >= reloadTime && IsReloading)
+        {
+            if (Weapon.ammoOutCount >= Weapon.maxAmmo - Weapon.ammoCount)
+            {
+                int amTemp = Weapon.ammoCount;
+                Weapon.ammoCount = Weapon.maxAmmo;
+                Weapon.ammoOutCount -= Weapon.maxAmmo - amTemp;
+                IsReloading = false;
+            }
+            else
+            {
+                if (Weapon.ammoOutCount < Weapon.maxAmmo - Weapon.ammoCount && Weapon.ammoOutCount > 0)
+                {
+                    int amTemp = Weapon.ammoCount;
+                    Weapon.ammoCount += Weapon.ammoOutCount;
+                    Weapon.ammoOutCount = 0;
+                    IsReloading = false;
+                }
+            }
+
+        }
+    }
+}
