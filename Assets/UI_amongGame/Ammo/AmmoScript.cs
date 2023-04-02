@@ -15,8 +15,8 @@ public class AmmoScript : MonoBehaviour
     float timer = 0;
     float reloadTime = 1.3f;
 
-    Vector3 barPosBefore = new Vector3(676, -210, 0);
-    Vector3 barPosAfter = new Vector3(676, -206.5f, 0);
+    Vector3 barPosBefore = new Vector3(-40, 16.5f, 0);
+    Vector3 barPosAfter = new Vector3(-40, 20f, 0);
 
     private void Start()
     {

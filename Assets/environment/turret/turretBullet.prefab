@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6934791665014264407}
   m_Layer: 0
   m_Name: turretBullet
-  m_TagString: Untagged
+  m_TagString: bullet_turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fcd7d133fe1d040b815f8eab5e8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageCount: 10
 --- !u!114 &-3419908690265739115
 MonoBehaviour:
   m_ObjectHideFlags: 0
