@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Craft : MonoBehaviour
 {
+    // ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр ахмр
     int bandageHP = 20;
     public void CraftBandage()
     {
@@ -13,7 +14,6 @@ public class Craft : MonoBehaviour
             InventoryScript.ragAm -= 2;
         }
     }
-
     public void UseBandage()
     {
         if (InventoryScript.bandageCount >= 1)
@@ -30,6 +30,32 @@ public class Craft : MonoBehaviour
                     PlayerManager.playerHP = 100;
                 }
             }            
+        }
+    }
+
+    private void Update()
+    {
+        Debug.Log(InventoryScript.scrapAm);
+    }
+
+    // йнкчвюъ опнбнкнйю  йнкчвюъ опнбнкнйю  йнкчвюъ опнбнкнйю  йнкчвюъ опнбнкнйю  йнкчвюъ опнбнкнйю
+    [SerializeField] private GameObject barbedWire;
+    public void CraftBarbedWire()
+    {
+        if (InventoryScript.scrapAm >= 8)
+        {
+            InventoryScript.barbedWireCount += 1;
+            InventoryScript.scrapAm -= 8;
+        }
+    }
+    public void UseBarbedWire()
+    {
+        if (InventoryScript.barbedWireCount >= 1)
+        {
+            Debug.Log("хЯОНКЭГНБЮК йнкчвюъ опнбнкнйю");
+            Instantiate(barbedWire);
+            InventoryScript.barbedWireCount -= 1;
+            InventoryScript.IsOpen = false;
         }
     }
 }

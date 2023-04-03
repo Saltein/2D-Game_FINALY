@@ -6,9 +6,10 @@ public class ZaLootScript : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "playerBody")
+        if (collision.gameObject.tag == "Scrap" || collision.gameObject.tag == "Rag" || collision.gameObject.tag == "Chemicals"
+            || collision.gameObject.tag == "Wood" || collision.gameObject.tag == "Bricks")
         {
-            switch (gameObject.tag)
+            switch (collision.gameObject.tag)
             {
                 case "Scrap":
                     InventoryScript.scrapAm += 1;
@@ -26,7 +27,7 @@ public class ZaLootScript : MonoBehaviour
                     InventoryScript.brickAm += 1;
                     break;
             }
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }

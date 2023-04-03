@@ -5,7 +5,7 @@ using TMPro;
 
 public class InventoryScript : MonoBehaviour
 {
-    private static bool IsOpen = false;
+    public static bool IsOpen = false;
 
     [SerializeField] private TextMeshProUGUI Sc;
     [SerializeField] private TextMeshProUGUI Ch;
@@ -16,7 +16,11 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bandage;
     [SerializeField] private TextMeshProUGUI bandageCountTxt;
 
+    [SerializeField] private TextMeshProUGUI barbedWire;
+    [SerializeField] private TextMeshProUGUI barbedWireCountTxt;
+
     public static int bandageCount = 0;
+    public static int barbedWireCount = 5;
 
     public static int scrapAm = 0, chemicAm = 0, ragAm = 0, woodAm = 0, brickAm = 0;
 
@@ -48,17 +52,23 @@ public class InventoryScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             IsOpen = !IsOpen;
-            Debug.Log("IsOpen " + IsOpen.ToString());
         }
 
 
         // -------------------- крафт --------------------
         bandageCountTxt.text = "x" + bandageCount.ToString();
+        barbedWireCountTxt.text = "x" + barbedWireCount.ToString();
         // бинты
         if (ragAm >= 2)
         {
             bandage.color = Color.white;
         }
         else { bandage.color = Color.gray; }
+        // колючая проволока
+        if (scrapAm >= 8)
+        {
+            barbedWire.color = Color.white;
+        }
+        else { barbedWire.color = Color.gray; }
     }
 }

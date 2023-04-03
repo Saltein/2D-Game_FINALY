@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1219184459542621243}
   - component: {fileID: 1393166585303582480}
   - component: {fileID: -2698548950492328005}
-  - component: {fileID: 5740263292393710541}
-  m_Layer: 0
+  - component: {fileID: 4865540345693555826}
+  - component: {fileID: -4165403283686809758}
+  m_Layer: 2
   m_Name: Rag
   m_TagString: Rag
   m_Icon: {fileID: 0}
@@ -113,7 +114,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7740363437240860685}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7fddb71b312b0ef46bf55ea1f23e86a0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c450a223fa167143870deb0e6eb591a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5740263292393710541
+--- !u!114 &4865540345693555826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +142,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 7740363437240860685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4975d416da532064cbc4df26a5192aae, type: 3}
+  m_Script: {fileID: 11500000, guid: ea502fce5afa83a42afb2f2b804ce0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 3233616214669561467, guid: 720f38202e33d75449ce3c49de66f760, type: 3}
+--- !u!50 &-4165403283686809758
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7740363437240860685}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 5
+  m_LinearDrag: 5
+  m_AngularDrag: 1.5
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

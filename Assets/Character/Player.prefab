@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3748231946150471127}
   - component: {fileID: 3748231946150471124}
   - component: {fileID: 3748231946150471125}
+  - component: {fileID: 9029413405297135829}
+  - component: {fileID: -740724011199395731}
   m_Layer: 0
   m_Name: Player
   m_TagString: playerBody
@@ -144,6 +146,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!58 &9029413405297135829
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748231946150471146}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!114 &-740724011199395731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748231946150471146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4975d416da532064cbc4df26a5192aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3748231946311839071
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +324,10 @@ MonoBehaviour:
   Ra: {fileID: 1001659713690629498, guid: af8e5b698bec52f40a4832a1b34f7fda, type: 3}
   Wo: {fileID: 264184370693410107, guid: 92a33077d7db78748b15ede500544269, type: 3}
   Br: {fileID: 3397735646237347361, guid: 19da5263633a90e4297db271cae051fc, type: 3}
+  bandage: {fileID: 0}
+  bandageCountTxt: {fileID: 0}
+  barbedWire: {fileID: 0}
+  barbedWireCountTxt: {fileID: 0}
   invPanel: {fileID: 6883821921689570547, guid: 47386f1cd93454d41acc21b4191b4286, type: 3}
 --- !u!1 &3748231946455025866
 GameObject:
@@ -319,7 +353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3748231946455025866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

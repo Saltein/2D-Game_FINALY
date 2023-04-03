@@ -14,6 +14,7 @@ TagManager:
   - Bricks
   - Zombie
   - bullet_turret
+  - barbedWire
   layers:
   - Default
   - TransparentFX

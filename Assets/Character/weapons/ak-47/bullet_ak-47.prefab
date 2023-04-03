@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1511906471409323571}
   - component: {fileID: 7799526881184064692}
   - component: {fileID: 6711363682742972909}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bullet_ak-47
   m_TagString: bullet_ak-47
   m_Icon: {fileID: 0}
@@ -147,4 +147,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 100
-  react: {fileID: 1278590035255471333, guid: f8468897cc2c8944884f02c89e41d0a0, type: 3}

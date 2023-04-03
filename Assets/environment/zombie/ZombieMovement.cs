@@ -11,6 +11,7 @@ public class ZombieMovement : MonoBehaviour
     float angR;
     float timer = 0;
     float waitTime;
+    float defaultSpeed;
 
     [SerializeField] GameObject eyes;
     [SerializeField] GameObject head;
@@ -24,6 +25,11 @@ public class ZombieMovement : MonoBehaviour
     {
         target = GameObject.FindWithTag("playerBody");
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        defaultSpeed = speed;
     }
 
     private void Update()
@@ -75,6 +81,15 @@ public class ZombieMovement : MonoBehaviour
             movement = randomDirection * speed;
         }
         rb.velocity = movement;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "barbedWire") { speed = 0.5f; }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "barbedWire") { speed = defaultSpeed; }
     }
 
     void SetRandomAngle()
