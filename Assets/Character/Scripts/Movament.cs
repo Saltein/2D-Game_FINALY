@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Movament : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float camSpeed = 0.03f;
+    private float speed = 5f;
+    private float camSpeed = 0.03f;
 
     [SerializeField] private GameObject head; // персонаж, голова
     [SerializeField] private GameObject target; // там, где указатель мыши
     [SerializeField] private GameObject middle; // там, где будет камера стоять
+    [SerializeField] private GameObject gun;
+
     public Camera cam; // камера собственно
 
     private float moveX;
@@ -18,9 +20,11 @@ public class Movament : MonoBehaviour
     private float timer;
 
     private float dashTime = 0.1f;
-    private float sprintSpeed;
     private float oldSpeed;
     private float newSpeed;
+
+    private float legSpeed;
+    private float legSprintSpeed;
 
     private float staminaDecrease = 40f;
     private float staminaIncrease = 15f;
@@ -37,9 +41,10 @@ public class Movament : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        legSpeed = LegScript.speed;
+        legSprintSpeed = legSpeed * 2;
+
         oldSpeed = speed;
-        sprintSpeed = oldSpeed * 2;
-        Debug.Log(oldSpeed.ToString() + "\n" + sprintSpeed.ToString());
     }
 
     private void Update()
@@ -61,6 +66,7 @@ public class Movament : MonoBehaviour
             {
                 IsRunning = true;
                 s *= 1.7f;
+                LegScript.speed = legSprintSpeed;
             }
             if (IsRunning && (moveX != 0 || moveY != 0))
             {
@@ -70,11 +76,13 @@ public class Movament : MonoBehaviour
         else
         {
             s = s1;
+            LegScript.speed = legSpeed;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             IsRunning = false;
             s = s1;
+            LegScript.speed = legSpeed;
         }
 
         if (!Input.GetKey(KeyCode.LeftShift) && PlayerManager.playerStamina < 100f)
@@ -117,5 +125,11 @@ public class Movament : MonoBehaviour
         Vector3 diff = target.transform.position - head.transform.position;
         float rotat = Mathf.Atan2(diff.x, diff.y) * Mathf.Rad2Deg;
         head.transform.rotation = Quaternion.Euler(0f, 0f, -rotat);
+
+        Vector3 diffG = target.transform.position - gun.transform.position;
+        float rotatG = Mathf.Atan2(diffG.x, diffG.y) * Mathf.Rad2Deg;      
+        gun.transform.rotation = Quaternion.Euler(0f, 0f, -rotatG);
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, head.transform.rotation, 0.05f);
     }
 }
