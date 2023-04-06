@@ -11,6 +11,7 @@ public class BulletBehavior : MonoBehaviour
     private float timer = 0;
 
     private bool IsHit = false;
+    public GameObject bullet_react;
 
     Rigidbody2D rb;
     float[] startPos = new float[2];
@@ -58,5 +59,6 @@ public class BulletBehavior : MonoBehaviour
     {
         IsHit = true;
         Destroy(gameObject);
+        Instantiate(bullet_react, transform.position, transform.rotation);
     }
 }
