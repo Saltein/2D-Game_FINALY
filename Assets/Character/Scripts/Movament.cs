@@ -11,6 +11,7 @@ public class Movament : MonoBehaviour
     [SerializeField] private GameObject target; // там, где указатель мыши
     [SerializeField] private GameObject middle; // там, где будет камера стоять
     [SerializeField] private GameObject gun;
+    [SerializeField] private GameObject shadow;
 
     public Camera cam; // камера собственно
 
@@ -131,5 +132,8 @@ public class Movament : MonoBehaviour
         gun.transform.rotation = Quaternion.Euler(0f, 0f, -rotatG);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, head.transform.rotation, 0.05f);
+
+        // тень
+        shadow.transform.rotation = transform.rotation;
     }
 }
