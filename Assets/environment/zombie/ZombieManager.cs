@@ -10,6 +10,7 @@ public class ZombieManager : MonoBehaviour
     float defaultSpeed;
 
     float force = 0.001f;
+    [SerializeField] GameObject damageZone;
 
     [SerializeField] GameObject scrap;
     [SerializeField] GameObject rag;
@@ -25,9 +26,9 @@ public class ZombieManager : MonoBehaviour
     {
         zombieHP = 100;
 
-        scrapAm = Random.Range(0, 3);
+        scrapAm = Random.Range(1, 3);
         chemicAm = Random.Range(0, 3);
-        ragAm = Random.Range(2, 3);
+        ragAm = Random.Range(1, 2);
         woodAm = Random.Range(0, 2);
         brickAm = Random.Range(0, 2);
     }
@@ -78,6 +79,7 @@ public class ZombieManager : MonoBehaviour
                 }
             }
 
+            Destroy(damageZone);
             Destroy(gameObject);
         }
     }

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class barbedWireScript : MonoBehaviour
+public class brickWallScript : MonoBehaviour
 {
-    [SerializeField] GameObject frame;
+    [SerializeField] private GameObject frame;
 
     bool IsPlaced;
     private RectTransform rectTransform;
@@ -35,18 +35,7 @@ public class barbedWireScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             IsPlaced = true;
-            frame.SetActive(false);         
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (IsPlaced)
-        {
-            if (collision.gameObject.tag == "playerBody")
-            {
-                PlayerManager.Damage(0);
-            }
+            frame.SetActive(false);
         }
     }
 }

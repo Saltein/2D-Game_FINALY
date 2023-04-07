@@ -33,11 +33,6 @@ public class Craft : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Debug.Log(InventoryScript.scrapAm);
-    }
-
     // ÊÎËÞ×Àß ÏÐÎÂÎËÎÊÀ  ÊÎËÞ×Àß ÏÐÎÂÎËÎÊÀ  ÊÎËÞ×Àß ÏÐÎÂÎËÎÊÀ  ÊÎËÞ×Àß ÏÐÎÂÎËÎÊÀ  ÊÎËÞ×Àß ÏÐÎÂÎËÎÊÀ
     [SerializeField] private GameObject barbedWire;
     public void CraftBarbedWire()
@@ -52,10 +47,40 @@ public class Craft : MonoBehaviour
     {
         if (InventoryScript.barbedWireCount >= 1)
         {
-            Debug.Log("Èñïîëüçîâàë ÊÎËÞ×Àß ÏÐÎÂÎËÎÊÀ");
             Instantiate(barbedWire);
             InventoryScript.barbedWireCount -= 1;
             InventoryScript.IsOpen = false;
+        }
+    }
+
+    // ÊÈÐÏÈ×ÍÀß ÑÒÅÍÀ  ÊÈÐÏÈ×ÍÀß ÑÒÅÍÀ  ÊÈÐÏÈ×ÍÀß ÑÒÅÍÀ  ÊÈÐÏÈ×ÍÀß ÑÒÅÍÀ  ÊÈÐÏÈ×ÍÀß ÑÒÅÍÀ  ÊÈÐÏÈ×ÍÀß ÑÒÅÍÀ 
+    [SerializeField] private GameObject brickWall;
+    public void CraftBrickWall()
+    {
+        if (InventoryScript.brickAm >= 8)
+        {
+            InventoryScript.brickWallCount += 1;
+            InventoryScript.brickAm -= 8;
+        }
+    }
+    public void UseBrickWall()
+    {
+        if (InventoryScript.brickWallCount >= 1)
+        {
+            Instantiate(brickWall);
+            InventoryScript.brickWallCount -= 1;
+            InventoryScript.IsOpen = false;
+        }
+    }
+
+    // ÏÀÒÐÎÍÛ 7.62  ÏÀÒÐÎÍÛ 7.62  ÏÀÒÐÎÍÛ 7.62  ÏÀÒÐÎÍÛ 7.62  ÏÀÒÐÎÍÛ 7.62  ÏÀÒÐÎÍÛ 7.62  ÏÀÒÐÎÍÛ 7.62 
+    public void CraftAmmo7_62()
+    {
+        if (InventoryScript.scrapAm >= 3 && InventoryScript.chemicAm >= 2)
+        {
+            Weapon.ammoOutCount += 30;
+            InventoryScript.scrapAm -= 3;
+            InventoryScript.chemicAm -= 2;
         }
     }
 }

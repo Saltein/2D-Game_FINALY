@@ -19,8 +19,16 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI barbedWire;
     [SerializeField] private TextMeshProUGUI barbedWireCountTxt;
 
+    [SerializeField] private TextMeshProUGUI brickWall;
+    [SerializeField] private TextMeshProUGUI brickWallCountTxt;
+
+    [SerializeField] private TextMeshProUGUI ammo7_62;
+    [SerializeField] private TextMeshProUGUI ammo7_62CountTxt;
+
     public static int bandageCount = 0;
     public static int barbedWireCount = 5;
+    public static int brickWallCount = 5;
+    public static int ammo7_62Count;
 
     public static int scrapAm = 0, chemicAm = 0, ragAm = 0, woodAm = 0, brickAm = 0;
 
@@ -58,17 +66,35 @@ public class InventoryScript : MonoBehaviour
         // -------------------- крафт --------------------
         bandageCountTxt.text = "x" + bandageCount.ToString();
         barbedWireCountTxt.text = "x" + barbedWireCount.ToString();
+        brickWallCountTxt.text = "x" + brickWallCount.ToString();
+        ammo7_62CountTxt.text = "x" + (Weapon.ammoOutCount + Weapon.ammoCount).ToString();
+
         // бинты
         if (ragAm >= 2)
         {
             bandage.color = Color.white;
         }
         else { bandage.color = Color.gray; }
+
         // колючая проволока
         if (scrapAm >= 8)
         {
             barbedWire.color = Color.white;
         }
         else { barbedWire.color = Color.gray; }
+
+        // кирпичная стена
+        if (brickAm >= 8)
+        {
+            brickWall.color = Color.white;
+        }
+        else { brickWall.color = Color.gray; }
+
+        // патроны 7.62
+        if (scrapAm >= 3 && chemicAm >= 2)
+        {
+            ammo7_62.color = Color.white;
+        }
+        else { ammo7_62.color = Color.gray; }
     }
 }

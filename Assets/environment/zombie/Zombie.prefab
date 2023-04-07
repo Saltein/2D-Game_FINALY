@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052da246f20994c44a3a9860c338b03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfZombie: 0
   eyes: {fileID: 6112284633381121071}
   head: {fileID: 6112284632161153718}
 --- !u!50 &6112284632139903360
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombieHP: 0
+  damageZone: {fileID: 6112284633312872423}
   scrap: {fileID: 7740363437240860685, guid: d2e007523390b614e9343853760bea81, type: 3}
   rag: {fileID: 7740363437240860685, guid: 0338696c14c16f547bf29f3dbe9ce055, type: 3}
   wood: {fileID: 7740363437240860685, guid: d242329e4f1f9d54eb0b23353ddb46ad, type: 3}

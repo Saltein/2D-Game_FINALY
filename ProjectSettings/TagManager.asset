@@ -15,6 +15,7 @@ TagManager:
   - Zombie
   - bullet_turret
   - barbedWire
+  - mainTarget
   layers:
   - Default
   - TransparentFX
