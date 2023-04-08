@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0026cb93f2204c14ea747fb04e2efc0d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Red October
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0c102e1b005e74c41a796aaeb748da99, type: 3}
+  - {fileID: 12800000, guid: bbcff60a27f951846969d8d52ba0b022, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

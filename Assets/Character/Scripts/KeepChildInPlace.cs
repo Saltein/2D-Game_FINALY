@@ -3,10 +3,11 @@ using UnityEngine;
 public class KeepChildInPlace : MonoBehaviour
 {
     private Transform parentTransform;
-    [SerializeField] private Transform otherTransform;
+    private Transform otherTransform;
 
     private void Start()
     {
+        otherTransform = GameObject.FindWithTag("grass").transform;
         parentTransform = transform.parent.transform;
     }
 

@@ -1,12 +1,13 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZombieMovement : MonoBehaviour
 {
     GameObject target;
     GameObject mainTarget;
     float speed = 2f;
-    float obstacleDistance = 25f;
+    float obstacleDistance = 50f;
     float angle;
 
     float ang;
@@ -23,6 +24,7 @@ public class ZombieMovement : MonoBehaviour
 
     [SerializeField] GameObject eyes;
     [SerializeField] GameObject head;
+    [SerializeField] GameObject shadow;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -64,18 +66,18 @@ public class ZombieMovement : MonoBehaviour
 
 
         // поворот
-        transform.rotation = Quaternion.Euler(0, 0, -ang + 90);
+        transform.rotation = Quaternion.Euler(0, 0, -ang);
 
         if (hit.collider != null && typeOfZombie/2 != 0)
         {
             if (hit.collider.tag == "playerBody" || hit.collider.tag == "Zombie")
             {
                 movement = direction * speed;
-                head.transform.rotation = Quaternion.Euler(0, 0, -ang + 90);
+                head.transform.rotation = Quaternion.Euler(0, 0, -ang);
             }
             else
             {
-                head.transform.rotation = Quaternion.Euler(0, 0, -angR + 90);
+                head.transform.rotation = Quaternion.Euler(0, 0, -angR);
                 if (timer >= (waitTime))
                 {
                     SetRandomAngle();
@@ -85,10 +87,11 @@ public class ZombieMovement : MonoBehaviour
                 randomDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
                 movement = randomDirection * speed;
             }
+            shadow.transform.rotation = transform.rotation;
         }
         else
         {
-            head.transform.rotation = Quaternion.Euler(0, 0, -angR + 90);
+            head.transform.rotation = Quaternion.Euler(0, 0, -angR);
             if (timer >= (waitTime))
             {
                 SetRandomAngle();
@@ -103,9 +106,12 @@ public class ZombieMovement : MonoBehaviour
         if (typeOfZombie/2 == 0)
         {
             movement = mainDirection * speed;
-            head.transform.rotation = Quaternion.Euler(0, 0, -mainAng + 90);
+            head.transform.rotation = Quaternion.Euler(0, 0, -mainAng);
+            shadow.transform.rotation = head.transform.rotation;
         }
         rb.velocity = movement;
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
