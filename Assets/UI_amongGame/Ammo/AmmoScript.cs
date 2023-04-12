@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class AmmoScript : MonoBehaviour
 {
+    public AudioSource reloadSource;
+
     [SerializeField] private TextMeshProUGUI ammoTxt;
     [SerializeField] private TextMeshProUGUI ammoOutTxt;
     [SerializeField] private Image ammoBar;
@@ -13,7 +15,7 @@ public class AmmoScript : MonoBehaviour
     public static bool IsReloading = false;
 
     float timer = 0;
-    float reloadTime = 1.3f;
+    float reloadTime = 1.7f;
 
     Vector3 barPosBefore = new Vector3(-40, 16.5f, 0);
     Vector3 barPosAfter = new Vector3(-40, 20f, 0);
@@ -36,7 +38,8 @@ public class AmmoScript : MonoBehaviour
 
         // перезарядка
         if ((Input.GetKeyDown(KeyCode.R) || Weapon.ammoCount == 0) && !IsReloading && Weapon.ammoCount < Weapon.maxAmmo && Weapon.ammoOutCount > 0)
-        {           
+        {
+            reloadSource.Play();
             IsReloading = true;
             timer = 0;
             reloadBar.color = new Color(0, 1, 1, 1);

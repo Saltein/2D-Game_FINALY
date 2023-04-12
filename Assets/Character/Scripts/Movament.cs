@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Movament : MonoBehaviour
 {
+    public AudioSource sourse;
+    public AudioClip stepsSound;
+
+
     private float speed = 5f;
     private float camSpeed = 0.1f;
 
@@ -53,6 +57,8 @@ public class Movament : MonoBehaviour
         // Камера
         float midX = (head.transform.position.x + target.transform.position.x) / 2;
         float midY = (head.transform.position.y + target.transform.position.y) / 2;
+
+        
 
         middle.transform.position = new Vector3(midX, midY, 0);
 
@@ -120,6 +126,15 @@ public class Movament : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
         rb.velocity = new Vector3(moveX, moveY) * speed * s;
+
+        if ( moveX != 0 || moveY != 0)
+        {
+            if (!sourse.isPlaying)
+            {
+                sourse.volume = 0.05f;
+                sourse.PlayOneShot(stepsSound);
+            }
+        }
 
         // Поворот
         target.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public AudioSource source;
+
     public static bool IsFire = false;
 
     public Transform weapPos;
@@ -19,6 +21,12 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            source.Play();
+        }
+        if (Input.GetMouseButtonUp(0) || ammoCount <= 0 || AmmoScript.IsReloading) { source.Stop(); }
+
         if (Input.GetAxis("Fire1") == 1 && !AmmoScript.IsReloading)
         {
             IsFire = true;

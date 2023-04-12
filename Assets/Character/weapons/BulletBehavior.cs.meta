@@ -4,9 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - bullet_react: {fileID: 5961833726364235132, guid: 5ee099e4e8d832541913aa558b88b101, type: 3}
-  - HUI: {instanceID: 0}
-  - wood_react: {instanceID: 0}
+  - Brick_react: {fileID: 1898207226640625919, guid: 33a3ab7f4fa1b664aa97770d9215607b, type: 3}
+  - Wood_react: {fileID: 1103068288337734772, guid: b81d02b000479e44a8e329129e446f03, type: 3}
+  - Metal_react: {fileID: 905496547461121055, guid: ad715ea9946a02f4eb3e3e9d4e2ca2b2, type: 3}
+  - Blood_react: {fileID: 5595767036267824168, guid: a1c969baeb1d91940bf2f95be1161c00, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
