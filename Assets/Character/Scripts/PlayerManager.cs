@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI HPTxt;
     public Image HPBar;
     public Image StaminaBar;
+    public static Transform currentTrans;
 
     private void Start()
     {
@@ -32,6 +34,9 @@ public class PlayerManager : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
+        currentTrans = transform;
+
+        
     }
 
     public static void Damage(int damageCount)
@@ -43,4 +48,10 @@ public class PlayerManager : MonoBehaviour
             gameOver = true;
         }
     }
+
+    
+        
+
+
+
 }
