@@ -15,7 +15,7 @@ public class React : MonoBehaviour
     void Update()
     {
         react_timer += Time.deltaTime;
-        if (react_timer >= 0.5f)
+        if (react_timer >= 0.1f)
         {
             Destroy(gameObject);
         }
