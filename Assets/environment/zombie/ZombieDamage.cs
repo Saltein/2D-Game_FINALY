@@ -17,5 +17,11 @@ public class ZombieDamage : MonoBehaviour
             PlayerManager.Damage(damageCount);
             timer = 0;
         }
+        if (timer >= damageTime && collision.gameObject.tag == "mainTarget")
+        {
+            LeninManager.Damage(damageCount);
+            timer = 0;
+            Debug.Log("едят деда");
+        }
     }
 }

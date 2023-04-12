@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movament : MonoBehaviour
 {
     private float speed = 5f;
-    private float camSpeed = 0.03f;
+    private float camSpeed = 0.1f;
 
     [SerializeField] private GameObject head; // персонаж, голова
     [SerializeField] private GameObject target; // там, где указатель мыши
@@ -131,7 +131,7 @@ public class Movament : MonoBehaviour
         float rotatG = Mathf.Atan2(diffG.x, diffG.y) * Mathf.Rad2Deg;      
         gun.transform.rotation = Quaternion.Euler(0f, 0f, -rotatG);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, head.transform.rotation, 0.05f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, head.transform.rotation, 0.15f);
 
         // тень
         shadow.transform.rotation = transform.rotation;
