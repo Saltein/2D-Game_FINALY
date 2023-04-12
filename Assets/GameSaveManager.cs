@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class GameSaveManager : MonoBehaviour
@@ -38,6 +40,20 @@ public class GameSaveManager : MonoBehaviour
         PlayerPrefs.SetFloat("PosRY", PlayerManager.currentTrans.rotation.y);
         PlayerPrefs.SetFloat("PosRZ", PlayerManager.currentTrans.rotation.z);
 
+
+        GameObject[] gameObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+        foreach (GameObject gameObject in gameObjects)
+        {
+            
+            PlayerPrefs.SetFloat(Convert.ToString(gameObject.name) + "savedX", gameObject.transform.position.x);
+            PlayerPrefs.SetFloat(Convert.ToString(gameObject.name) + "savedY", gameObject.transform.position.y);
+            PlayerPrefs.SetFloat(Convert.ToString(gameObject.name) + "savedZ", gameObject.transform.position.z);
+            PlayerPrefs.SetFloat(Convert.ToString(gameObject.name) + "savedRX", gameObject.transform.rotation.x);
+            PlayerPrefs.SetFloat(Convert.ToString(gameObject.name) + "savedRY", gameObject.transform.rotation.y);
+            PlayerPrefs.SetFloat(Convert.ToString(gameObject.name) + "savedRZ", gameObject.transform.rotation.z);
+            
+        }
+
         PlayerPrefs.Save();
         Debug.Log("Game data saved!");
 
@@ -69,7 +85,16 @@ public class GameSaveManager : MonoBehaviour
 
             /// позиция + ротация загрузка
             GameObject.Find("Player").transform.position = new Vector3(PlayerPrefs.GetFloat("PosPX"), PlayerPrefs.GetFloat("PosPY"), PlayerPrefs.GetFloat("PosPZ"));
-            
+
+            GameObject[] gameObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+            foreach (GameObject gameObject in gameObjects)
+            {
+
+                GameObject.Find(gameObject.name).transform.position = new Vector3(PlayerPrefs.GetFloat(Convert.ToString(gameObject.name) + "savedX"), 
+                    PlayerPrefs.GetFloat(Convert.ToString(gameObject.name) + "savedY"), PlayerPrefs.GetFloat(Convert.ToString(gameObject.name) + "savedZ"));
+            }
+
+
 
             Debug.Log("Game data loaded!");
         }
