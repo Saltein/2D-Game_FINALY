@@ -13,7 +13,8 @@ public class GameSaveManager : MonoBehaviour
     {
         
         PlayerPrefs.SetInt("SavedHP", PlayerManager.playerHP);
-        
+        PlayerPrefs.SetFloat("SavedStamina", PlayerManager.playerStamina);
+
 
         Debug.Log("PlayerManager.playerStamina");
 
@@ -50,7 +51,8 @@ public class GameSaveManager : MonoBehaviour
         if (PlayerPrefs.HasKey("SavedHP"))
         {
             PlayerManager.playerHP = PlayerPrefs.GetInt("SavedHP");
-            
+            PlayerManager.playerStamina = PlayerPrefs.GetFloat("SavedStamina");
+
 
             InventoryScript.bandageCount = PlayerPrefs.GetInt("SavedbandageCount");       /// инвентарь загрузка
             InventoryScript.barbedWireCount = PlayerPrefs.GetInt("SavedbarbedWireCount");
