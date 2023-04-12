@@ -17,6 +17,9 @@ TagManager:
   - barbedWire
   - mainTarget
   - grass
+  - From_brick
+  - From_wood
+  - From_metal
   layers:
   - Default
   - TransparentFX

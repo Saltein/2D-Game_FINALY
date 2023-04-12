@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
 
     public Transform weapPos;
     public GameObject bullet;
+    public GameObject ShootFire;
 
     private float rate_of_fire = 0.1f;
     private float timer = 1f;
@@ -24,6 +25,7 @@ public class Weapon : MonoBehaviour
             if (timer >= rate_of_fire && ammoCount > 0) 
             {
                 Instantiate(bullet, weapPos.transform.position, weapPos.transform.rotation);
+                Instantiate(ShootFire, weapPos.transform.position, weapPos.transform.rotation);
                 ammoCount -= 1;
                 timer = 0f;
             }
