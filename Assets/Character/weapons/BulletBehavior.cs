@@ -11,7 +11,12 @@ public class BulletBehavior : MonoBehaviour
     private float timer = 0;
 
     private bool IsHit = false;
-    public GameObject bullet_react;
+
+    public GameObject Brick_react;
+    public GameObject Wood_react;
+    public GameObject Metal_react;
+    public GameObject Blood_react;
+
 
     Rigidbody2D rb;
     float[] startPos = new float[2];
@@ -20,6 +25,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void Start()
     {
+        
         startPos[0] = transform.position.x; startPos[1] = transform.position.y;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -59,6 +65,22 @@ public class BulletBehavior : MonoBehaviour
     {
         IsHit = true;
         Destroy(gameObject);
-        Instantiate(bullet_react, transform.position, transform.rotation);
+        if (collision.gameObject.tag == "From_brick")
+        {
+            Instantiate(Brick_react, transform.position, transform.rotation);
+        }
+        if (collision.gameObject.tag == "From_wood")
+        {
+            Instantiate(Wood_react, transform.position, transform.rotation);
+        }
+        if (collision.gameObject.tag == "From_metal")
+        {
+            Instantiate(Metal_react, transform.position, transform.rotation);
+        }
+        if (collision.gameObject.tag == "Zombie")
+        {
+            Instantiate(Blood_react, transform.position, transform.rotation);
+        }
+
     }
 }

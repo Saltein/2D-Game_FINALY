@@ -5,6 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - bullet_react: {fileID: 5961833726364235132, guid: 5ee099e4e8d832541913aa558b88b101, type: 3}
+  - HUI: {instanceID: 0}
+  - wood_react: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
