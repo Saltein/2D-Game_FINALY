@@ -21,8 +21,6 @@ public class BulletBehavior : MonoBehaviour
     Rigidbody2D rb;
     float[] startPos = new float[2];
 
-    Vector2 normalCollis;
-
     private void Start()
     {
         

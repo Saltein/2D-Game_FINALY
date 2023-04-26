@@ -21,7 +21,6 @@ public class ZombieDamage : MonoBehaviour
         {
             LeninManager.Damage(damageCount);
             timer = 0;
-            Debug.Log("едят деда");
         }
     }
 }

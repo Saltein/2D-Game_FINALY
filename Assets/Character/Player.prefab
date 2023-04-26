@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3748231946150471121}
-  m_RootOrder: -1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!108 &4863160591268421257
 Light:
@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: -740724011199395731}
   - component: {fileID: 3748231946150471124}
   - component: {fileID: 3586928284958502024}
-  - component: {fileID: 9029413405297135829}
   m_Layer: 0
   m_Name: Player
   m_TagString: playerBody
@@ -343,6 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae8cf55aeda9f845a1304743b440b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourse: {fileID: 0}
+  stepsSound: {fileID: 0}
   head: {fileID: 3748231946311839071}
   target: {fileID: 0}
   middle: {fileID: 0}
@@ -378,12 +379,6 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -398,25 +393,6 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -471,42 +447,6 @@ PolygonCollider2D:
     - - {x: -2.703472, y: 5.1038423}
       - {x: -0.30766952, y: 4.012646}
       - {x: -1.5427916, y: 2.382708}
-  m_UseDelaunayMesh: 0
---- !u!58 &9029413405297135829
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3748231946150471146}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 30
 --- !u!1 &3748231946311839071
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,9 +457,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3748231946311839065}
   - component: {fileID: 3748231946311839070}
+  - component: {fileID: 5435347232311900914}
   m_Layer: 0
   m_Name: playerHead
-  m_TagString: Untagged
+  m_TagString: playerHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -592,6 +533,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &5435347232311900914
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748231946311839071}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 20
 --- !u!1 &3748231946394588773
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73dad2276d7f0c4983d37a422405ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
   weapPos: {fileID: 3748231946455027509}
   bullet: {fileID: 3233616214669561467, guid: 720f38202e33d75449ce3c49de66f760, type: 3}
   ShootFire: {fileID: 0}

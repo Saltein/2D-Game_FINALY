@@ -18,10 +18,12 @@ public class LootScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "playerBody")
+        if (collision.gameObject.tag == "playerHead")
         {
             playerPos = collision.transform.position;
             IsEnoughClose = true;
+            
         }
+        Debug.Log(collision.tag);
     }
 }

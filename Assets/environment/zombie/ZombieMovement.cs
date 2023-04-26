@@ -54,12 +54,18 @@ public class ZombieMovement : MonoBehaviour
         ang = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         angR = Mathf.Atan2(randomDirection.x, randomDirection.y) * Mathf.Rad2Deg;
         RaycastHit2D hit = Physics2D.Raycast(eyes.transform.position, direction, obstacleDistance);
-        Debug.DrawRay(eyes.transform.position, direction * obstacleDistance);
+        if (typeOfZombie / 2 != 0)
+        {
+            Debug.DrawRay(eyes.transform.position, direction * obstacleDistance);
+        }       
 
         mainDirection = (mainTarget.transform.position - transform.position).normalized;
         mainAng = Mathf.Atan2(mainDirection.x, mainDirection.y) * Mathf.Rad2Deg;
         RaycastHit2D mainHit = Physics2D.Raycast(eyes.transform.position, mainDirection, 1000);
-        Debug.DrawRay(eyes.transform.position, mainDirection * 100, Color.red);
+        if (typeOfZombie / 2 == 0)
+        {
+            Debug.DrawRay(eyes.transform.position, mainDirection * 100, Color.red);
+        }     
 
 
 
@@ -68,7 +74,7 @@ public class ZombieMovement : MonoBehaviour
 
         if (hit.collider != null && typeOfZombie/2 != 0)
         {
-            if (hit.collider.tag == "playerBody" || hit.collider.tag == "Zombie")
+            if (hit.collider.tag == "playerBody" || hit.collider.tag == "playerHead" || hit.collider.tag == "Zombie")
             {
                 movement = direction * speed;
                 head.transform.rotation = Quaternion.Euler(0, 0, -ang);
