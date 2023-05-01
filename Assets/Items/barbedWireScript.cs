@@ -6,6 +6,13 @@ public class barbedWireScript : MonoBehaviour
 {
     [SerializeField] GameObject frame;
 
+    public int WireHP = 10;
+    public static GameObject barbedWire;
+
+    float timer;
+    float damageTime = 0.5f;
+    int buildingsDamage = 10;
+
     bool IsPlaced;
     private RectTransform rectTransform;
 
@@ -37,6 +44,10 @@ public class barbedWireScript : MonoBehaviour
             IsPlaced = true;
             frame.SetActive(false);         
         }
+        if (WireHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,6 +58,20 @@ public class barbedWireScript : MonoBehaviour
             {
                 PlayerManager.Damage(0);
             }
+            if (collision.gameObject.tag == "Zombie")
+            {
+                WireHP -= 2;
+            }
+
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (timer >= damageTime && collision.gameObject.tag == "Zombie")
+        {
+            WireHP -= buildingsDamage;
+            timer = 0;
+        }
+    }
+    
 }

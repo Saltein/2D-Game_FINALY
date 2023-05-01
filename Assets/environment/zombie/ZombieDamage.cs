@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZombieDamage : MonoBehaviour
 {
     int damageCount = 2;
+    int buildingsDamage = 10;
     float damageTime = 0.5f;
 
     float timer;
@@ -22,5 +23,6 @@ public class ZombieDamage : MonoBehaviour
             LeninManager.Damage(damageCount);
             timer = 0;
         }
+        
     }
 }
