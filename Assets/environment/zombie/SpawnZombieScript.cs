@@ -6,15 +6,18 @@ public class SpawnZombieScript : MonoBehaviour
 {
     [SerializeField] private GameObject zombie;
     float timer = 0;
-    float spawnTime = 5;
+    float spawnTime = Random.Range(3, 10);
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnTime)
+        if (!Day_Night_Change.IsDay)
         {
-            Instantiate(zombie, transform.position, transform.rotation);
-            timer = 0;
-            spawnTime = Random.Range(3, 10);
-        }
+            timer += Time.deltaTime;
+            if (timer >= spawnTime)
+            {
+                Instantiate(zombie, transform.position, transform.rotation);
+                timer = 0;
+                spawnTime = Random.Range(3, 10);
+            }
+        }       
     }
 }
