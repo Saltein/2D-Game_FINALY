@@ -22,6 +22,7 @@ TagManager:
   - From_metal
   - playerHead
   - BrickWall
+  - sleepTxt
   layers:
   - Default
   - TransparentFX

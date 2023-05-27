@@ -7,8 +7,10 @@ public class Day_Night_Change : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject dayLight;
+    [SerializeField] private GameObject timerObject;
 
     public static bool IsDay = true;
+    public static string bedMessage = "Õ≈ ¬–≈Ãﬂ —œ¿“‹!";
 
     private Quaternion dayTime = Quaternion.Euler(0, 0, 0);
     private Quaternion nightTime = Quaternion.Euler(0, 90, 0);
@@ -18,11 +20,11 @@ public class Day_Night_Change : MonoBehaviour
     string strMinutes;
 
     private int timerDays = 1;
-    private int timerHours = 6;
+    public static int timerHours = 6;
     private int timerMinutes;
 
-    private int startDayTime = 6;
-    private int endDayTime = 18;
+    public static int startDayTime = 6;
+    public static int endDayTime = 18;
 
     private float timer;
     private float minuteTime = 0.2f;
@@ -48,6 +50,12 @@ public class Day_Night_Change : MonoBehaviour
             timerDays += 1;
         }
 
+
+        if (InventoryScript.IsOpen)
+        {
+            timerObject.SetActive(false);
+        }
+        else { timerObject.SetActive(true); }
     }
 
     private void FixedUpdate()
@@ -66,11 +74,13 @@ public class Day_Night_Change : MonoBehaviour
         if (timerHours == endDayTime)
         {
             IsDay = false;
+            bedMessage = "¬€ œ–Œ—œ¿À» ƒŒ ÕŒ◊»";
             timeToSet = nightTime;
         }
         if (timerHours == startDayTime)
         {
             IsDay = true;
+            bedMessage = "[E] - —œ¿T‹";
             timeToSet = dayTime;
         }
 
