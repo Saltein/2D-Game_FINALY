@@ -5,10 +5,32 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool PauseGame;
+    public static bool IsPauseMenuOpen;
     public GameObject pauseGameMenu;
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !InventoryScript.IsOpen)
+        {
+            if (PauseGame)
+            {
+                Resume();
+                pauseGameMenu.SetActive(false);
+                IsPauseMenuOpen = false;
+            }
+            else
+            {
+                Pause();
+                pauseGameMenu?.SetActive(true);
+                IsPauseMenuOpen = true;
+            }
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Escape) && InventoryScript.IsOpen)
+        {
+            InventoryScript.IsOpen = false;
+            Resume();
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab) && !IsPauseMenuOpen)
         {
             if (PauseGame)
             {
@@ -18,17 +40,17 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+            
         }
     }
     public void Resume()
     {
-        pauseGameMenu.SetActive(false);
+        
         Time.timeScale = 1f;
         PauseGame = false;
     }
     public void Pause()
     {
-        pauseGameMenu?.SetActive(true);
         Time.timeScale = 0;
         PauseGame = true;
     }

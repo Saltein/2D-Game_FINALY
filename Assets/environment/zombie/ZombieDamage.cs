@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZombieDamage : MonoBehaviour
 {
-    int damageCount = 0;
+    int damageCount = 2;
     float damageTime = 0.5f;
 
     float timer;

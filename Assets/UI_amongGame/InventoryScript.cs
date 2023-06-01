@@ -57,7 +57,7 @@ public class InventoryScript : MonoBehaviour
             invPanel.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !PauseMenu.IsPauseMenuOpen)
         {
             IsOpen = !IsOpen;
         }
