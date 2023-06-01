@@ -41,8 +41,11 @@ public class barbedWireScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            if (!IsPlaced) { InventoryScript.IsOpen = true; }
             IsPlaced = true;
-            frame.SetActive(false);         
+            
+            frame.SetActive(false);    
+            
         }
         if (WireHP <= 0)
         {
