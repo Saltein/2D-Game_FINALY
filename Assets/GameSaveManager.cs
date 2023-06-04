@@ -20,18 +20,23 @@ public class GameSaveManager : MonoBehaviour
 
         Debug.Log("PlayerManager.playerStamina");
 
-        PlayerPrefs.SetInt("SavedbandageCount", InventoryScript.bandageCount);       /// инвентарь сохранение
-        PlayerPrefs.SetInt("SavedbarbedWireCount", InventoryScript.barbedWireCount);
-        PlayerPrefs.SetInt("SavedbrickWallCount", InventoryScript.brickWallCount);
-        PlayerPrefs.SetInt("Savedammo7_62Count", InventoryScript.ammo7_62Count);
+        PlayerPrefs.SetInt("SavedbandageCount", InventoryScript.bandageCount);       /// инвентарь сохранение Weapon.ammoCount    
+    PlayerPrefs.SetInt("SavedbarbedWireCount", InventoryScript.barbedWireCount);
+        PlayerPrefs.SetInt("SavedbrickWallCount", InventoryScript.brickWallCount);  
+        PlayerPrefs.SetInt("Savedammo7_62Count", InventoryScript.ammo7_62Count);   
         PlayerPrefs.SetInt("SavedscrapAm", InventoryScript.scrapAm);
         PlayerPrefs.SetInt("SavedchemicAm", InventoryScript.chemicAm);
         PlayerPrefs.SetInt("SavedragAm", InventoryScript.ragAm);
         PlayerPrefs.SetInt("SavedwoodAm", InventoryScript.woodAm);
         PlayerPrefs.SetInt("SavedbrickAm", InventoryScript.brickAm);
 
-        PlayerPrefs.SetInt("SavedammoCount", Weapon.ammoCount);
+        PlayerPrefs.SetInt("SavedammoCount", Weapon.ammoCount);  /// —охранение патронов
         PlayerPrefs.SetInt("SavedammoOutCount", Weapon.ammoOutCount);
+
+        PlayerPrefs.SetInt("SavedtimerMinutes", Day_Night_Change.timerMinutes); /// —охранение времени
+        PlayerPrefs.SetInt("SavedtimerDays", Day_Night_Change.timerDays);
+        PlayerPrefs.SetInt("SavedtimerHours", Day_Night_Change.timerHours);
+        PlayerPrefs.SetFloat("Savedtimer", Day_Night_Change.timer);
 
         PlayerPrefs.SetFloat("PosPX", PlayerManager.currentTrans.position.x); /// позици€ и ротаци€ сохранение
         PlayerPrefs.SetFloat("PosPY", PlayerManager.currentTrans.position.y);
@@ -80,8 +85,13 @@ public class GameSaveManager : MonoBehaviour
             InventoryScript.woodAm = PlayerPrefs.GetInt("SavedwoodAm");
             InventoryScript.brickAm = PlayerPrefs.GetInt("SavedbrickAm");
 
-            Weapon.ammoCount = PlayerPrefs.GetInt("SavedammoCount");
+            Weapon.ammoCount = PlayerPrefs.GetInt("SavedammoCount"); /// патроны загрузка
             Weapon.ammoOutCount = PlayerPrefs.GetInt("SavedammoOutCount");
+
+            Day_Night_Change.timerMinutes = PlayerPrefs.GetInt("SavedtimerMinutes"); /// загрузка времени
+            Day_Night_Change.timerDays = PlayerPrefs.GetInt("SavedtimerDays");
+            Day_Night_Change.timerHours = PlayerPrefs.GetInt("SavedtimerHours");
+            Day_Night_Change.timer = PlayerPrefs.GetFloat("Savedtimer");
 
             /// позици€ + ротаци€ загрузка
             GameObject.Find("Player").transform.position = new Vector3(PlayerPrefs.GetFloat("PosPX"), PlayerPrefs.GetFloat("PosPY"), PlayerPrefs.GetFloat("PosPZ"));

@@ -19,14 +19,14 @@ public class Day_Night_Change : MonoBehaviour
     string strHours;
     string strMinutes;
 
-    private int timerDays = 1;
+    public static int timerDays = 1;
     public static int timerHours = 6;
-    private int timerMinutes;
+    public static int timerMinutes;
 
     public static int startDayTime = 6;
     public static int endDayTime = 18;
 
-    private float timer;
+    public static float timer;
     private float minuteTime = 0.2f;
     private float changeSpeed = 0.003f;
 
