@@ -2884,6 +2884,7 @@ GameObject:
   - component: {fileID: 214149570}
   - component: {fileID: 214149569}
   - component: {fileID: 214149575}
+  - component: {fileID: 214149576}
   - component: {fileID: 214149573}
   - component: {fileID: 214149574}
   m_Layer: 5
@@ -3120,6 +3121,18 @@ MonoBehaviour:
   timerText: {fileID: 1178490476}
   dayLight: {fileID: 1776740198}
   timerObject: {fileID: 911810127}
+--- !u!114 &214149576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214149568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0580e3b1858dfa48959e36ee948db6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &214359283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9170,7 +9183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "[E] \u0427\u0422\u041E\u0411\u042B \u0421\u041F\u0410\u0422\u042C"
+  m_text: "[E] \u0427t\u041E\u0411\u042B \u0421\u041F\u0410t\u042C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5910934b5714d1240b1f4e3121f4b55d, type: 2}
   m_sharedMaterial: {fileID: -3454315873697885182, guid: 5910934b5714d1240b1f4e3121f4b55d, type: 2}
