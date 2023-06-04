@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2919047169642205992}
   - component: {fileID: 5923018053614613476}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4244474470616717658}
   - component: {fileID: 5871387538204701183}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,12 +178,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7740363437240860723}
   - component: {fileID: 7740363437240860684}
-  - component: {fileID: 1219184459542621243}
   - component: {fileID: 1393166585303582480}
   - component: {fileID: -2698548950492328005}
   - component: {fileID: 4865540345693555826}
   - component: {fileID: -4165403283686809758}
-  m_Layer: 2
+  - component: {fileID: -1140559940473797889}
+  m_Layer: 7
   m_Name: Rag
   m_TagString: Rag
   m_Icon: {fileID: 0}
@@ -259,22 +259,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1219184459542621243
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7740363437240860685}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
 --- !u!58 &1393166585303582480
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -285,6 +269,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 7fddb71b312b0ef46bf55ea1f23e86a0, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -333,7 +336,26 @@ Rigidbody2D:
   m_AngularDrag: 1.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1140559940473797889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7740363437240860685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7e70135a1737f4d9ebdd94ce9f7731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 15

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1511906471409323571}
   - component: {fileID: 7799526881184064692}
   - component: {fileID: 6711363682742972909}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: bullet_ak-47
   m_TagString: bullet_ak-47
   m_Icon: {fileID: 0}
