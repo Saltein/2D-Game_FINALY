@@ -40,7 +40,9 @@ public class brickWallScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            if (!IsPlaced) { InventoryScript.IsOpen = true; }
             IsPlaced = true;
+
             frame.SetActive(false);
         }
         if (brickWallHP <= 0)
