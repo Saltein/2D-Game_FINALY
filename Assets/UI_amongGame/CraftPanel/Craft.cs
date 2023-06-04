@@ -41,7 +41,6 @@ public class Craft : MonoBehaviour
         {
             InventoryScript.barbedWireCount += 1;
             InventoryScript.scrapAm -= 8;
-            PlayerManager.PlayerScore += 5;
         }
     }
     public void UseBarbedWire()
@@ -51,7 +50,6 @@ public class Craft : MonoBehaviour
             Instantiate(barbedWire);
             InventoryScript.barbedWireCount -= 1;
             InventoryScript.IsOpen = false;
-            PlayerManager.PlayerScore += 10;
         }
     }
 
@@ -63,7 +61,6 @@ public class Craft : MonoBehaviour
         {
             InventoryScript.brickWallCount += 1;
             InventoryScript.brickAm -= 8;
-            PlayerManager.PlayerScore += 5;
         }
     }
     public void UseBrickWall()
@@ -73,7 +70,6 @@ public class Craft : MonoBehaviour
             Instantiate(brickWall);
             InventoryScript.brickWallCount -= 1;
             InventoryScript.IsOpen = false;
-            PlayerManager.PlayerScore += 10;
         }
     }
 

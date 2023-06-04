@@ -82,7 +82,6 @@ public class ZombieManager : MonoBehaviour
 
             Destroy(damageZone);
             Destroy(gameObject);
-            PlayerManager.PlayerScore += 10;
         }
     }
 
