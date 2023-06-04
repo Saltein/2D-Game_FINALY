@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ZombieManager : MonoBehaviour
 {
-    public int zombieHP;
+    public float zombieHP;
     float timer;
     float damageTime = 0.5f;
     float defaultSpeed;
+    public static float damage_amplification = 1f;
 
     float force = 0.001f;
     [SerializeField] GameObject damageZone;
@@ -89,11 +90,11 @@ public class ZombieManager : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "bullet_ak-47":
-                zombieHP -= 40;
+                zombieHP -= 40 * damage_amplification;
                 break;
 
             case "bullet_turret":
-                zombieHP -= 70;
+                zombieHP -= 70 * damage_amplification;
                 break;
         }  
     }
