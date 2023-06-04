@@ -38,8 +38,8 @@ public class Movament : MonoBehaviour
     private float s = 1;
     private float s1 = 1;
 
-    private bool IsDash = false;
-    private bool IsRunning = false;
+    public static bool IsDash = false;
+    public static bool IsRunning = false;
 
     private Rigidbody2D rb;
 
@@ -69,7 +69,7 @@ public class Movament : MonoBehaviour
         // Бег и стамина
         if (PlayerManager.playerStamina > 0)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) && DamageCircle.kara ==0)
             {
                 IsRunning = true;
                 s *= 1.7f;
@@ -101,7 +101,7 @@ public class Movament : MonoBehaviour
         if (PlayerManager.playerStamina < 0) { PlayerManager.playerStamina = 0; }
 
         // Рывок
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && DamageCircle.kara == 0)
         {
             if (PlayerManager.playerStamina > staminaDash && (moveX != 0 || moveY != 0))
             {
