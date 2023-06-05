@@ -38,7 +38,7 @@ public class ZombieManager : MonoBehaviour
     {
         if (zombieHP <= 0)
         {
-            Instantiate(deadZombie, transform.position, Quaternion.identity);
+            Instantiate(deadZombie, transform.position, transform.rotation);
             if (scrapAm != 0)
             {
                 for (int i = 0; i < scrapAm; i++)
