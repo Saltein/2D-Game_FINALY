@@ -552,7 +552,11 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 60
+=======
+  m_RootOrder: 57
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &37100320 stripped
 Transform:
@@ -2118,7 +2122,11 @@ RectTransform:
   - {fileID: 818163960}
   - {fileID: 362024661}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 54
+=======
+  m_RootOrder: 53
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4228,7 +4236,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &307934847
 MonoBehaviour:
@@ -6305,7 +6313,11 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 55
+=======
+  m_RootOrder: 54
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464111971
 GameObject:
@@ -6399,7 +6411,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &466272783 stripped
 Transform:
@@ -6760,7 +6772,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 67
+=======
+  m_RootOrder: 62
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: -65.2, z: 0}
 --- !u!1 &498752803
 GameObject:
@@ -7920,7 +7936,11 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 69
+=======
+  m_RootOrder: 64
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &608638368 stripped
 Transform:
@@ -8037,7 +8057,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &629375956
 MonoBehaviour:
@@ -8244,7 +8264,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &640959081 stripped
 Transform:
@@ -10967,7 +10987,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &896602009 stripped
 Transform:
@@ -11723,7 +11743,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7740363437240860723, guid: c8317448824e70341b0fead41b0ab80b, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 57
+=======
+      value: 56
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 7740363437240860723, guid: c8317448824e70341b0fead41b0ab80b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13701,7 +13725,11 @@ Transform:
   - {fileID: 287694540}
   - {fileID: 543275563}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 70
+=======
+  m_RootOrder: 66
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1178490474
 GameObject:
@@ -16780,7 +16808,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7740363437240860723, guid: d2e007523390b614e9343853760bea81, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 48
+=======
+      value: 49
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 7740363437240860723, guid: d2e007523390b614e9343853760bea81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19207,7 +19239,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 65
+=======
+  m_RootOrder: 61
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &1786061928 stripped
 Transform:
@@ -20273,7 +20309,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1861336241
 PrefabInstance:
@@ -20745,7 +20781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7740363437240860723, guid: 08d4d036f17c6fd4e859be8c50b3503e, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 62
+=======
+      value: 58
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 7740363437240860723, guid: 08d4d036f17c6fd4e859be8c50b3503e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21423,7 +21463,11 @@ RectTransform:
   - {fileID: 1700862948}
   - {fileID: 55597673}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 64
+=======
+  m_RootOrder: 59
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22403,7 +22447,11 @@ Transform:
   - {fileID: 736424989}
   - {fileID: 1905136555}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 56
+=======
+  m_RootOrder: 54
+>>>>>>> parent of 763e681 (loot house boxes)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2067687807
 PrefabInstance:
@@ -23167,7 +23215,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 56980458008550800, guid: 4dce66014f6d6894da756b29ecb58010, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 68
+=======
+      value: 65
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 56980458008550800, guid: 4dce66014f6d6894da756b29ecb58010, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23222,6 +23274,70 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dce66014f6d6894da756b29ecb58010, type: 3}
+<<<<<<< HEAD
+=======
+--- !u!1001 &2112916269136321985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_RootOrder
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -237.83943
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.3912325
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558042652771411753, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305851808791088894, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+      propertyPath: m_Name
+      value: Grenade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89866f208a978944f92411e73a4ce31d, type: 3}
+>>>>>>> parent of 763e681 (loot house boxes)
 --- !u!1001 &3748231946630900533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23288,7 +23404,11 @@ PrefabInstance:
       objectReference: {fileID: 637702498}
     - target: {fileID: 3748231946150471121, guid: 1e6f8960a4ed2ec4286ff5ed92bb2a88, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 63
+=======
+      value: 60
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 3748231946150471121, guid: 1e6f8960a4ed2ec4286ff5ed92bb2a88, type: 3}
       propertyPath: m_LocalScale.x
@@ -23504,7 +23624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1999990203122654708, guid: 4c7aa28d156bb6740bf42fca5903b197, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 50
+=======
+      value: 51
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 1999990203122654708, guid: 4c7aa28d156bb6740bf42fca5903b197, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23573,7 +23697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7588054228001068667, guid: f04dfbd671313194c9a3d4186a675bf8, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 53
+=======
+      value: 52
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 7588054228001068667, guid: f04dfbd671313194c9a3d4186a675bf8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23706,7 +23834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2190844800100756383, guid: cf283b353ff26214980b49838c3bd0b0, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 44
+=======
+      value: 45
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 2190844800100756383, guid: cf283b353ff26214980b49838c3bd0b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23795,7 +23927,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9093593270129392131, guid: 02cb9964997038d45ace9a9a51b0570b, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 66
+=======
+      value: 63
+>>>>>>> parent of 763e681 (loot house boxes)
       objectReference: {fileID: 0}
     - target: {fileID: 9093593270129392131, guid: 02cb9964997038d45ace9a9a51b0570b, type: 3}
       propertyPath: m_LocalPosition.x
