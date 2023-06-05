@@ -8,11 +8,10 @@ public class prayToLenin : MonoBehaviour
     [SerializeField] GameObject Pray;
     [SerializeField] GameObject gratz;
     [SerializeField] UnityEngine.UI.Image progressBar;
-   
+    [SerializeField] GameObject WarningText;
 
     int nearLenin = 0;
     float timer = 0f;
-    float timer2 = 0f;
     float progressTime = 3f;
     int praycount = 0;
     float barLenght;
@@ -27,7 +26,7 @@ public class prayToLenin : MonoBehaviour
         {
             Pray.SetActive(false);
             nearLenin = 0;
-            
+            gratz.SetActive(false);
         }
         
 
@@ -73,22 +72,6 @@ public class prayToLenin : MonoBehaviour
             {
                 PlayerManager.playerHP = 200;
                 ZombieManager.damage_amplification = 1.5f;
-            }
-        }
-
-
-        if (praycount >= 10)
-        {
-            timer2 += Time.deltaTime;
-            if (timer2 < 10 && nearLenin == 1)
-            {
-                gratz.SetActive(true);
-                Pray.SetActive(false);
-            }
-            if (timer2 > 10 || nearLenin != 1)
-            {
-                gratz.SetActive(false);
-                Pray.SetActive(false);
             }
         }
         
