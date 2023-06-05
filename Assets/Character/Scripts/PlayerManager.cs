@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     public static int playerHP;
     public static float playerStamina;
     public static bool gameOver;
+    public static int PlayerScore;
 
     public TextMeshProUGUI HPTxt;
     public Image HPBar;
@@ -46,6 +47,10 @@ public class PlayerManager : MonoBehaviour
         if (playerHP <= 0)
         {
             gameOver = true;
+            PlayerScore = 0;
+            Day_Night_Change.timerDays = 1;
+            Day_Night_Change.timerHours = 6;
+            Day_Night_Change.timerMinutes = 0;
         }
     }
 
