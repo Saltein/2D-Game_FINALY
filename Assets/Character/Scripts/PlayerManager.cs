@@ -51,7 +51,6 @@ public class PlayerManager : MonoBehaviour
             Day_Night_Change.timerDays = 1;
             Day_Night_Change.timerHours = 6;
             Day_Night_Change.timerMinutes = 0;
-            LeninManager.leninHP = 3000;
         }
     }
 

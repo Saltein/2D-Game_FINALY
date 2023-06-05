@@ -8,7 +8,7 @@ public class prayToLenin : MonoBehaviour
     [SerializeField] GameObject Pray;
     [SerializeField] GameObject gratz;
     [SerializeField] UnityEngine.UI.Image progressBar;
-
+    [SerializeField] GameObject WarningText;
 
     int nearLenin = 0;
     float timer = 0f;
