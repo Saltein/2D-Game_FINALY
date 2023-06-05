@@ -6,7 +6,7 @@ public class SpawnZombieScript : MonoBehaviour
 {
     [SerializeField] private GameObject zombie;
     float timer = 0;
-    float spawnTime = 3;
+    float spawnTime = 1;
     void Update()
     {
         if (!Day_Night_Change.IsDay)
