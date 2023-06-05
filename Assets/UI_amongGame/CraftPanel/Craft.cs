@@ -87,4 +87,18 @@ public class Craft : MonoBehaviour
             InventoryScript.chemicAm -= 2;
         }
     }
+
+
+    // ÎÑÊÎËÎ×ÍÀß ÃÐÀÍÀÒÀ ÎÑÊÎËÎ×ÍÀß ÃÐÀÍÀÒÀ ÎÑÊÎËÎ×ÍÀß ÃÐÀÍÀÒÀ ÎÑÊÎËÎ×ÍÀß ÃÐÀÍÀÒÀ ÎÑÊÎËÎ×ÍÀß ÃÐÀÍÀÒÀ 
+    public void CraftGrenade()
+    {
+        if (InventoryScript.scrapAm >= 20 && InventoryScript.chemicAm >= 15)
+        {
+            InventoryScript.grenadeCount += 1;
+            InventoryScript.scrapAm -= 20;
+            InventoryScript.chemicAm -= 15;
+            PlayerManager.PlayerScore += 100;
+        }
+    }
+
 }
