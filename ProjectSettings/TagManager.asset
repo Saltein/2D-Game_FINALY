@@ -24,6 +24,7 @@ TagManager:
   - BrickWall
   - sleepTxt
   - glockbullets
+  - aim
   layers:
   - Default
   - TransparentFX

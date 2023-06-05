@@ -63,7 +63,7 @@ public class Weapon : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (Input.GetMouseButton(3) || Input.GetKeyDown(KeyCode.G))
+        if ((Input.GetMouseButton(2) || Input.GetKeyDown(KeyCode.G)) && InventoryScript.grenadeCount >= 1)
         {
             InventoryScript.grenadeCount--;
             Instantiate(grenade, transform.position, transform.rotation);

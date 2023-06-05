@@ -32,7 +32,7 @@ public class InventoryScript : MonoBehaviour
     public static int barbedWireCount = 5;
     public static int brickWallCount = 5;
     public static int ammo7_62Count;
-    public static int grenadeCount = 1;
+    public static int grenadeCount = 3;
 
     public static int scrapAm = 0, chemicAm = 0, ragAm = 0, woodAm = 0, brickAm = 0;
 
