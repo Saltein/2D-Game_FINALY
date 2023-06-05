@@ -5,7 +5,7 @@ public class ZombieMovement : MonoBehaviour
     GameObject target;
     GameObject mainTarget;
     float speed = 2f;
-    float obstacleDistance = 50f;
+    float obstacleDistance = 100f;
     float angle;
 
     float ang;
@@ -74,36 +74,38 @@ public class ZombieMovement : MonoBehaviour
 
         if (hit.collider != null && typeOfZombie/2 != 0)
         {
-            if (hit.collider.tag == "playerBody" || hit.collider.tag == "playerHead" || hit.collider.tag == "Zombie")
-            {
-                movement = direction * speed;
-                head.transform.rotation = Quaternion.Euler(0, 0, -ang);
-            }
-            else
-            {
-                head.transform.rotation = Quaternion.Euler(0, 0, -angR);
-                if (timer >= (waitTime))
-                {
-                    SetRandomAngle();
-                    waitTime = Random.Range(0.3f, 2f);
-                    timer = 0;
-                }
-                randomDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-                movement = randomDirection * speed;
-            }
+            movement = direction * speed;
             shadow.transform.rotation = transform.rotation;
-        }
-        else
-        {
-            head.transform.rotation = Quaternion.Euler(0, 0, -angR);
-            if (timer >= (waitTime))
-            {
-                SetRandomAngle();
-                waitTime = Random.Range(0.3f, 2f);
-                timer = 0;
-            }
-            randomDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-            movement = randomDirection * speed;
+            //    if (hit.collider.tag == "playerBody" || hit.collider.tag == "playerHead" || hit.collider.tag == "Zombie")
+            //    {
+            //        movement = direction * speed;
+            //        head.transform.rotation = Quaternion.Euler(0, 0, -ang);
+            //    }
+            //    else
+            //    {
+            //        head.transform.rotation = Quaternion.Euler(0, 0, -angR);
+            //        if (timer >= (waitTime))
+            //        {
+            //            SetRandomAngle();
+            //            waitTime = Random.Range(0.3f, 2f);
+            //            timer = 0;
+            //        }
+            //        randomDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            //        movement = randomDirection * speed;
+            //    }
+            //    shadow.transform.rotation = transform.rotation;
+            //}
+            //else
+            //{
+            //    head.transform.rotation = Quaternion.Euler(0, 0, -angR);
+            //    if (timer >= (waitTime))
+            //    {
+            //        SetRandomAngle();
+            //        waitTime = Random.Range(0.3f, 2f);
+            //        timer = 0;
+            //    }
+            //    randomDirection = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            //    movement = randomDirection * speed;
         }
 
         //--------------
