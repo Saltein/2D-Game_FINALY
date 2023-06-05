@@ -97,6 +97,9 @@ public class ZombieManager : MonoBehaviour
             case "bullet_turret":
                 zombieHP -= 70 * damage_amplification;
                 break;
+            case "glockbullets":
+                zombieHP -= 30 * damage_amplification;
+                break;
         }  
     }
     private void OnTriggerStay2D(Collider2D collision)

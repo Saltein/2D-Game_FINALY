@@ -390,7 +390,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.2542575
+  m_Mass: 1.01703
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -869,6 +869,7 @@ MonoBehaviour:
   source: {fileID: 0}
   weapPos: {fileID: 3748231946455027509}
   bullet: {fileID: 3233616214669561467, guid: 720f38202e33d75449ce3c49de66f760, type: 3}
+  glockbullet: {fileID: 1900551881776013135, guid: 4c7aa28d156bb6740bf42fca5903b197, type: 3}
   ShootFire: {fileID: 0}
 --- !u!1 &7061160831357262587
 GameObject:

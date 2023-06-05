@@ -23,6 +23,7 @@ TagManager:
   - playerHead
   - BrickWall
   - sleepTxt
+  - glockbullets
   layers:
   - Default
   - TransparentFX

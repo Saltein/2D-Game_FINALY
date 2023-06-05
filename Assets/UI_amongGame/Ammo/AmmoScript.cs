@@ -27,8 +27,16 @@ public class AmmoScript : MonoBehaviour
     }
     void Update()
     {
-        ammoTxt.text = Weapon.ammoCount.ToString();
-        ammoOutTxt.text = Weapon.ammoOutCount.ToString();
+        if (ChangeWeaponScript.weaponID == 1)
+        {
+            ammoTxt.text = Weapon.ammoCount.ToString();
+            ammoOutTxt.text = Weapon.ammoOutCount.ToString();
+        }
+        else if (ChangeWeaponScript.weaponID == 2)
+        {
+            ammoTxt.text = "INF";
+            ammoOutTxt.text = "";
+        }
         timer += Time.deltaTime;
 
         float maxAmm = Weapon.maxAmmo;
