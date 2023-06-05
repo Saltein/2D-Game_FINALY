@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     public Transform weapPos;
     public GameObject bullet;
     public GameObject ShootFire;
+    public GameObject grenade;
 
     private float rate_of_fire = 0.1f;
     private float timer = 1f;
@@ -40,5 +41,12 @@ public class Weapon : MonoBehaviour
         } else { IsFire = false; }
 
         timer += Time.deltaTime;
+
+
+        if (Input.GetMouseButton(3) || Input.GetKeyDown(KeyCode.G))
+        {
+            InventoryScript.grenadeCount--;
+            Instantiate(grenade, transform.position, transform.rotation);
+        }
     }
 }

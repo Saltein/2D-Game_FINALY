@@ -25,10 +25,14 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ammo7_62;
     [SerializeField] private TextMeshProUGUI ammo7_62CountTxt;
 
+    [SerializeField] private TextMeshProUGUI grenade;
+    [SerializeField] private TextMeshProUGUI grenadeCountTxt;
+
     public static int bandageCount = 0;
     public static int barbedWireCount = 5;
     public static int brickWallCount = 5;
     public static int ammo7_62Count;
+    public static int grenadeCount = 1;
 
     public static int scrapAm = 0, chemicAm = 0, ragAm = 0, woodAm = 0, brickAm = 0;
 
@@ -68,6 +72,7 @@ public class InventoryScript : MonoBehaviour
         barbedWireCountTxt.text = "x" + barbedWireCount.ToString();
         brickWallCountTxt.text = "x" + brickWallCount.ToString();
         ammo7_62CountTxt.text = "x" + (Weapon.ammoOutCount + Weapon.ammoCount).ToString();
+        grenadeCountTxt.text = "x" + grenadeCount.ToString();
 
         // бинты
         if (ragAm >= 2)
@@ -96,5 +101,12 @@ public class InventoryScript : MonoBehaviour
             ammo7_62.color = Color.white;
         }
         else { ammo7_62.color = Color.gray; }
+
+        // граната
+        if (scrapAm >= 20 && chemicAm >= 15)
+        {
+            grenade.color = Color.white;
+        }
+        else { grenade.color = Color.gray; }
     }
 }
