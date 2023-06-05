@@ -12,6 +12,7 @@ public class prayToLenin : MonoBehaviour
 
     int nearLenin = 0;
     float timer = 0f;
+    float timer2 = 0f;
     float progressTime = 3f;
     int praycount = 0;
     float barLenght;
@@ -74,7 +75,22 @@ public class prayToLenin : MonoBehaviour
                 ZombieManager.damage_amplification = 1.5f;
             }
         }
-        
+
+        if (praycount >= 10)
+        {
+            timer2 += Time.deltaTime;
+            if (timer2 < 10 && nearLenin == 1)
+            {
+                gratz.SetActive(true);
+                Pray.SetActive(false);
+            }
+            if (timer2 > 10 || nearLenin != 1)
+            {
+                gratz.SetActive(false);
+                Pray.SetActive(false);
+            }
+        }
+
     }
    
 }
